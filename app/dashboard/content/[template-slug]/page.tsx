@@ -14,6 +14,9 @@ import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
 import { useRouter } from "next/navigation";
+import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext";
+import { UpdateCreditUsageContext } from "@/app/(context)/UpdateCreditUsageContext";
+import { date } from "drizzle-orm/mysql-core";
 
 interface PROPS {
   params: {
@@ -22,6 +25,10 @@ interface PROPS {
 }
 
 function CreateNewContent(props: PROPS) {
+  const { userSubscription, setUserSubscription } = useContext(
+    UserSubscriptionContext
+  );
+
   const selectedTemplate: TEMPLATE | undefined = Template?.find(
     (item) => item.slug == props.params["template-slug"]
   );
@@ -29,13 +36,20 @@ function CreateNewContent(props: PROPS) {
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
   const { user } = useUser();
-  const router = useRouter()
+  const router = useRouter();
   const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
+  const {updateCreditUsage,setUpdateCreditUsage}=useContext(UpdateCreditUsageContext)
+
+  /**
+   * Used to generate content from AI
+   * @param formData
+   * @returns
+   */
 
   const GenerateAIContent = async (formData: any) => {
-    if (totalUsage >= 10000) {
+    if (totalUsage >= 10000 && !userSubscription) {
       console.log("Please Upgrade");
-      router.push('/dashboard/billing')
+      router.push("/dashboard/billing");
       return;
     }
     setLoading(true);
@@ -51,6 +65,7 @@ function CreateNewContent(props: PROPS) {
       result?.response.text()
     );
     setLoading(false);
+    setUpdateCreditUsage(Date.now())
   };
 
   const SaveInDb = async (formData: any, slug: any, aiResp: string) => {
