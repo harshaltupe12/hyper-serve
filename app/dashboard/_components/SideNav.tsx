@@ -36,9 +36,11 @@ function SideNav() {
   return (
     <div className="h-screen p-5 relative shadow-sm border">
       <div className="flex justify-center">
+        <Link href={'/'}>
         <h2 className="font-bold text-3xl font-serif text-primary">
           Hyper Serve
         </h2>
+        </Link>
       </div>
       <hr className="my-6 border" />
       <div className="mt-3">
