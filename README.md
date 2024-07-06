@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# How to Fire it up 🔥...
 
-## Getting Started
-
-First, run the development server:
-
+Fork the project and setup:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To start the project : 
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To Access the database : 
+```bash
+npm run db:studio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To Update database : 
+```bash
+npm run db:push
+```
 
-## Learn More
+# Project Overview 🌏
+Welcome to our comprehensive SaaS platform designed to streamline and enhance productivity through a suite of powerful services. Built with modern technologies, this platform offers over 18 customizable templates for various services, including content generation, code creation, and SEO optimization. With an intuitive interface and seamless user experience, our platform is equipped to meet diverse needs and boost efficiency.
 
-To learn more about Next.js, take a look at the following resources:
+# Technology Stack 🧑‍💻
+- **Frontend**: TypeScript, NextJS, Tailwind CSS, Shadcn, Toast UI
+  
+- **Backend**: Drizzle ORM, PostgreSQL
+- **Payment Gateway**: Razorpay
+- **Authentication**: Clerk
+- **Deployment**: Vercel
+- **AI**: Gemini AI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Features 😍
+- **Blog Topic Ideas**: Generate engaging and relevant blog topics tailored to your niche.
+  
+- **Website SEO**: Optimize your website’s SEO to improve search engine rankings and visibility.
+- **YouTube SEO**: Enhance your YouTube videos with effective SEO strategies.
+- **Grammar Checking**: Ensure your content is error-free with advanced grammar checking tools.
+- **Hashtag Generating**: Create impactful hashtags to increase social media engagement.
+- **Code Debugging**: Identify and fix issues in your code efficiently with our debugging tools.
+- **Code Explanation**: Get clear and concise explanations for complex code snippets.
+- **And Many More**: Explore a wide range of additional features designed to cater to various digital needs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Snapshots 📸
